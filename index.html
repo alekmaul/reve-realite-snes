@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Du rêve à la réalité : Développer des jeux sur des consoles rétro</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Du rêve à la réalité : Développer des jeux sur des consoles rétro">
+        <meta name="author" content="Jean-Michel Girard">
+        <link rel="stylesheet" href="vendor/reveal/dist/reset.css">
+        <link rel="stylesheet" href="vendor/reveal/dist/reveal.css">
+        <link rel="stylesheet" href="vendor/reveal/dist/theme/black.css">
+        <link rel="stylesheet" href="vendor/reveal/plugin/highlight/monokai.css">
+        <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css">
+        <link rel="stylesheet" href="vendor/custom/css/custom.css">
+    </head>
+    <body>
+        <div class="watermark">
+            <a href="url_here" rel="noopener noreferrer">
+              <img
+                src="assets/images/tnt_logo.png"
+              />
+            </a>
+         </div>
+         <div class="wl_logo">
+            <a href="url_here" rel="noopener noreferrer">
+              <img
+                src="assets/images/WL_logo_turquoise.png"
+              />
+            </a>
+         </div>
+
+        <div class="reveal">
+ 
+
+            <div class="slides">
+
+                <section data-background="assets/images/background-1.jpg" data-transition="zoom">
+                    <h1>Du rêve à la réalité</h1>
+                    <p>Développer un jeu<br>sur Super Nintendo</p>
+                    <p><img class="h480" src="assets/images/snes-1.png" alt="SNES"></p>
+                     <aside class="notes">
+                        Je vouspropose de vous plonger dans un rêve par rapport à ma passion, le développement de jeux sur console ancienne. 
+                        Comme quoi, il faut toujours croire à ses rêves, ce talk va vous le prouver.
+                    </aside>
+                </section>
+
+                <section data-transition="zoom" data-autoslide="0" data-background="assets/images/background-1.jpg" data-background-transition="slide">
+                    <section data-transition="slide">
+                        <h3>Jean-Michel Girard / Alekmaul</h3>
+                        <p><img class="small-image" src="assets/images/alek_logo.png" alt="logo"></p>
+                        <table class="about">
+                        <tr><td><hr></td></tr>
+                        <tr><td><i class="fas fa-globe color-website"></i> alekmaulstudio.fr</td></tr>
+                        <tr><td><i class="fab fa-github color-github"></i> github.com/alekmaul/</td></tr>
+                        <tr><td><i class="fab fa-bluesky color-bluesky"></i> @alekmaul</td></tr>
+                        <tr><td><i class="fab fa-facebook color-facebook"></i> Alek Maul</td></tr>
+                        <tr><td><i class="fab fa-youtube color-youtube"></i> @alekmaul2009</td></tr>
+                        <tr><td><i class="fab fa-instagram color-instagram"></i> maulalek</td></tr>
+                        </table>
+                    </section>
+                    <aside class="notes">
+                        DTL le jour chez Worldline, développeur sur anciennes consoles la nuit.
+                    </aside>
+                </section>
+
+                <section data-background="assets/images/background-1.jpg" data-transition="zoom">
+                    <section>
+                        <p><img class="large-image" src="assets/images/begin-0.png" alt="Au commencement"></p>
+                        <aside class="notes">
+                            **Au commencement
+                            *Imaginez le jeu vidéo au début des années 80
+                             Dans les années 70-80, les jeux vidéo sur des consoles se jouaient sur la télé du salon.
+                            Ma passion du jeu vidéo date de là, j’avais un peu plus de 10 ans à l’époque des premières consoles.
+                        </aside>
+                    </section>
+                    <section>
+                        <p><img class="large-image" src="assets/images/begin-1.jpg" alt="Au commencement"></p>
+                        <aside class="notes">
+                            Quelqu'un connait ce film ?
+                            **Ready Player One
+                            *Trouvez toutes les références
+                            revoir certaines consoles, de regarder le film “Ready Player One”, 
+                            un hommage, à près de 50 années de jeux vidéo.
+                        </aside>
+                    </section>
+                </section>
+                <section data-background="assets/images/background-1.jpg" data-transition="slide">
+                    <p><img class="large-image" src="assets/images/hebdo-1.png"></p>
+                    <aside class="notes">
+                        **Les années Hebdogiciel
+                        *Une bonne façon d’apprendre à coder sur micro-ordinateurs
+                        Années Lycée, débuté sa parution en 1983
+                        concours dit “les deuxligneurs”
+                        Le dernier numéro est paru le 2 Janvier 1987, sans crier gare -> partis chez Joystick
+                    </aside>
+                </section>
+
+                <section data-background="assets/images/background-1.jpg" data-transition="zoom">
+                    <h2>Quelle est cette console de jeux ?</h2>
+                    <section data-transition="slide">
+                        <p class="medium-text">Release date : 1977 (1982)</p>
+                        <p><img class="large-image" src="assets/images/atari2600.png"></p>
+                        <h3 class="fragment">Atari 2600</h3>
+                        <aside class="notes">
+                            D'ailleurs, petit jeu jeu, devinez le nom de ces consoles
+                        </aside>
+                    </section>
+                    <section data-transition="slide">
+                        <p class="medium-text">Release date : 1979 (1982)</p>
+                        <p><img class="large-image" src="assets/images/intellivision.png"></p>
+                        <h3  class="fragment">Intellivision</h3>
+                    </section>
+                    <section data-transition="slide">
+                        <p class="medium-text">Release date : 1982 (1983)</p>
+                        <p><img class="large-image" src="assets/images/colecovision.png"></p>
+                        <h3  class="fragment">Colecovision</h3>
+                    </section>
+                    <section data-transition="slide">
+                        <p class="medium-text">Release date : 1990 (1992)</p>
+                        <p><img class="large-image" src="assets/images/super_nintendo.png"></p>
+                        <h3  class="fragment">Super Nintendo</h3>
+                        <aside class="notes">
+                            La dernière , la plus simple, qui va nous servir de base dans ce talk.
+                        </aside>
+                    </section>                
+                </section>                
+                <section data-background="assets/images/background-1.jpg" data-transition="zoom">
+                    <p><img class="large-image" src="assets/images/begin-2.png" alt="Dev homebrew"></p>
+                    <aside class="notes">
+                        **Le développement Homebrew
+                        Toutes les consoles, nouveaux jeux développés maintenant par des amateurs.
+                         que l'on nomme le développement homebrew
+                    </aside>
+                </section>
+
+                <section data-background="assets/images/background-1.jpg" data-transition="slide">
+                    <h2>Que dit Wikipedia ?</h2>
+                    <p class="fragment" style="width: 100%">[...] « Homebrew » [...] jeux vidéo produits [...] sur des plateformes de jeux propriétaires, pas typiquement programmables par des utilisateurs, ou utilisant du matériel propriétaire pour le stockage des jeux (cartouche) [...] »</p>
+                    <aside class="notes">
+                        **La notion de Homebrew
+                        Le terme Homebrew arrive dans les années 2000
+                        Permettant de mettre un mot sur ces développements amateurs.
+                        Voici la  définition du site Wikipedia, 
+                        Anglicisme Homebrew signifie à la base « brassé à la maison » en traduction littérale ou produit du terroir, 
+                        Assez éloigné du concept de développement, 
+                        Assez proche tout de même dans l’esprit que ce n’est pas un réel éditeur de jeu comme UbiSoft, Virgin Games ou Capcom qui réalisent le jeu.
+                    </aside>
+                </section>
+                <section data-background="assets/images/background-1.jpg" data-transition="slide">
+                    <section>
+                        <p><img class="large-image" src="assets/images/begin-3.png" alt="Dev homebrew"></p>
+                        <aside class="notes">
+                            **Et la legislation dans tout ça ?
+                        </aside>
+                    </section>
+                    <section>
+                        <h3>Réponse courte</h3>
+                        <p class="fragment fade-up">ça va </p>
+                        <p class="fragment fade-up"><i class="fas fa-2x fa-smile"></i></p>
+                    </section>
+                    <section>
+                        <h3>Réponse longue</h3>
+                        <p class="fragment fade-up" >Contournement des systèmes de sécurité</p>
+                        <p class="fragment fade-up" >Reprise de code propriétaire</p>
+                        <p class="fragment fade-up" >Plus d'exploitation commerciale</p>
+                        <p class="fragment fade-up" >Pas de kit de développement officiel</p>
+                        <p class="fragment fade-up" style="color: red;">Ne pas refaire Mario ou Zelda <i class="fas fa-2x fa-smile"></i></p>
+                        <aside class="notes">
+                            1) Contournement des systèmes de sécurité permettant théoriquement d’empêcher un jeu sans licence de démarrer.
+                            2) Pas de protection sur la console, de kits de développement sans reprise de code propriétaire.
+                            3) Pas d’utilisation de licences de jeux actuels (graphismes, musiques, noms).
+                                https://forums.nesdev.org/viewtopic.php?t=17447
+                        </aside>
+                    </section>
+                </section>
+            
+                <section data-background="assets/images/background-1.jpg" data-transition="slide">
+                    <p><img class="large-image" src="assets/images/kitdev.png" alt="uc20ans"></p>
+                    <aside class="notes">
+                        **Comment créer un jeu
+                        *Avec un kit de développement (SDK)
+                            On développe des Homebrew le plus souvent du temps avec des kits de développement. 
+                        Il y en a 2 types :
+                        Officiel : Utilisable mais pas recommandé à cause des droits d’auteur encore en vigueur des sociétés ayant éditées les consoles.
+                        Amateur : Fortement recommandé, car permet de se familiariser rapidement avec les spécificités de la console, de l’ordinateur utilisé (2012).
+                        Kit officiel en photo. Il a été conçu par Intelligent Systems et vendu uniquement aux studios de développement sous licence Nintendo (très cher la licence …).
+                        https://en.wikipedia.org/wiki/Super_NES_Emulator_SE
+                        https://blog.wolffmyren.com/2008/07/28/super-nintendo-emulator-se/
+                    </aside>
+                </section>
+                
+                <section data-background="assets/images/background-1.jpg" data-transition="slide">
+                    <h3>Comment tester un jeu</h3>
+                    <section>
+                        <p>Au travers d'émulateurs sous Windows, Linux, Mac-OS</p>
+                        <p><img class="large-image" src="assets/images/emulateurs.png"></p>
+                        <aside class="notes">
+                            Si on continue à explorer le développement, il va falloir tester notre jeu.
+                            Le moyen le plus simple pour tester son jeu Homebrew est d’utiliser un émulateur, surtout qu’il devient couteux d’obtenir une console SNES maintenant.
+                        </aside>
+                    </section>
+                    <section>
+                        <p>Avec une cartouche Flash sur une vrai console</p>
+                        <p><img class="large-image" src="assets/images/carte_flash.png"></p>
+                        <aside class="notes">
+                            Emulateurs font pas tout.
+                            
+                            Powerpack SNES : https://www.retrousb.com/product_info.php?cPath=24&products_id=84
+                            SD2SNES Pro : https://krikzz.com/store/home/54-sd2snes-pro.html
+                            Parler du Cartmodding ou de la fabrication
+                        </aside>
+                    </section>
+                    <section>
+                        <p>Avoir une console switchless</p>
+                        <p><img class="large-image" src="assets/images/pcb-switchless-addon-placement.jpg"></p>
+                        <aside class="notes">
+                            Parler du Cartmodding ou de la fabrication
+                            NTSC - PAL et donc mod console.
+                            
+                            http://www.ffviman.fr/switch-snes/presentation-historique-switchless.html pour le switch de la SNES.
+                        </aside>
+                    </section>
+                </section>
+                
+                <section data-background="assets/images/background-1.jpg" data-transition="slide">
+                    <section>
+                        <h3>Sydney Hunter</h3>
+                        <p>Que c'est mon jeu Super Nintendo que j'ai fais&nbsp;&nbsp;<i class="fas fa-2x fa-smile"></i></p>
+                        <table class="about">
+                        <tr><td><img class="h200 rounded16" src="assets/images/sydney-1.png" alt="sc1"> <img class="h200 rounded16" src="assets/images/sydney-2.png" alt="sc2"></td><td> </td><td><img class="h256 rounded16" src="assets/images/sydney-5.png" alt="scbox"></td></tr>
+                        <tr><td><img class="h200 rounded16" src="assets/images/sydney-3.png" alt="sc3"> <img class="h200 rounded16" src="assets/images/sydney-4.png" alt="sc4"></td><td> </td><td><img class="h256 rounded16" src="assets/images/sydney-6.gif" alt="scanim"></td></tr>
+                        </table>
+                        <p></p>
+                        <aside class="notes">
+                        Parlons maintenant du jeu dans sa version Super Nintendo.
+                            Ce jeu repose sur le principe d’exploration de tableaux, pour récupérer des objets et les utiliser pour progresser dans l’aventure.
+                            Vous incarnez donc un explorateur, nommé Sydney Hunter, qui se trouve piégé dans une montagne…
+                            Armé uniquement de son fidèle boomerang, Sydney doit naviguer dans des cavernes sombres tout en évitant les chauves-souris, les fantômes, la lave brûlante et beaucoup d’autres obstacles et ennemis. Il doit traverser 10 cavernes différentes avant de pouvoir retrouver sa liberté.
+                            Au fur et à mesure de sa progression, les cavernes deviennent de plus en plus grandes et donc son exploration de plus en plus complexe.
+                        </aside>
+                    </section>
+                    <section>
+                        <h3>2014</h3>
+                        <p>Début de l'aventure</p>
+                        <p><img class="large-image" src="assets/images/collectorvision.png"></p>
+                        <aside class="notes">
+                            Laissez moi vous présenter mes amis Canadiens et Américains : Jean-François, Toby (tous deux canadiens) et John un Américain. Ils sont tous trois éditeur de jeux amateurs au travers de la société CollectorVision.
+                                Le 15 juin 2014, je reçois un mail de Jean-François Dupuis (à gauche sur la photo) m’indiquant qu’il voulait commercialiser un de mes jeux sur SNES  mais surtout qu’il recherchait un développeur pour un jeu original dont il possédait les droits et tous les graphismes, nommé « Sydney Hunter and the Caverns of Death ».
+                                Sydney Hunter and the Caverns of Death est à la base un jeu Flash créé il y a quelques années par Keith Erickson de Studio Piña. Ce dernier est surtout un artiste ayant participé à la creation des graphismes pour plus de 40 jeux commercialisés par des studios de jeux professionnels.
+                                Mon expérience de la programmation sur Super Nintendo datant à ce moment là de 2 années, je me dis que cela vaut le coup de tenter l’aventure.
+                        </aside>
+                    </section>
+                </section>
+            
+                <section data-background="assets/images/background-1.jpg" data-transition="slide">
+                    <h3>Développement du jeu</h3>
+                    <p>Ou la longue ascension du Kilimandjaro …</p>
+                    <section>
+                    <p><img class="h640 large-image" src="assets/images/Kilimandjaro.png" alt="Kilimandjaro"></p>
+                    <aside class="notes">
+                        Les développements ont donc débuté en 2014, en utilisant mon kit de développement PVSneslib que je vais détailler ensuite. 
+                            J’ai créé rapidement la première caverne, qui était assez simple.
+                            Certains passages, comme ceux avec de la lave, ont demandé une certaine gymnastique d’espris pour avoir quelque chose de sympatique à l’écran, et j’y suis arrivé.
+                            J’ai donc attaqué les autres cavernes mais je me suis aperçu que cela ne serait pas assez rapide en terme de jouabilité car le jeu était programmé en langage C. 
+                            En effet, certaines carvernes étaient assez complexes, avec des niveaux qui bougaient verticalement (on appelle cela du scrolling dans le jargon des développeurs). 
+                    </aside>
+                    </section>
+                    <section>
+                        <p><img class="r-frame large-image" src="assets/images/dev-sydney.png" alt="Kilimandjaro"></p>
+                        <aside class="notes">
+                            J’ai ainsi du refaire le jeu plusieurs fois, en repartant de zéro, car ma copie me plaisait pas. 
+                            J’ai aussi refais tous les niveaux avec un outil nommé Tiled, présenté sur ce slide, afin de me permettre une meilleur gestion des ennemis sur chaque écran, que je réinjecte facilement ensuite dans le code du jeu.
+                            A certains moments, j’étais démotivé, me disant que je n’y arriverai pas, je faisais des pause de plusieurs semaines. Mais j’ai continué, essayant à chaque fois de trouver la bonne technique.
+                            J’ai laissé de côté le langage C pour refaire certaines parties, comme la gestion de l’affichage des niveaux, dans un langage plus proche de la Super Nintendo, nommé le langage assembleur. Cela a été payant, le jeu fonctionnait maintenant bien.
+                            Les développements se sont donc passés de 2014 à fin 2017, plus de 3 ans de travail, à refaire et refaire le jeu mais aussi à apporter certaines demandes de modifications de la part de mes amis Canadiens et Américain, comme une énorme scène d’introduction animée, présentant l’introduction du jeu, qui lui donne un aspect assez professionnel, comme les jeux de l’époque. Vous voyez 4 écrans de cette scène d’introduction sur la droite de ce slide.
+                        </aside>
+                    </section>
+                </section>
+                <section data-background="assets/images/background-1.jpg" data-transition="slide">
+                    <h3>Fabrication de la cartouche</h3>
+                    <p>La chine et le marché de masse</p>
+                    <p><img class="large-image" src="assets/images/fabric.png"></p>
+                    <aside class="notes">
+                        Collectorvision ne possède pas, aux USA ou au Canada de moyens pour fabriquer des jeux sur Super Nintendo. Il a donc fallu trouver un partenaire ayant la capacité de le faire, c’est ce qui a été fait avec JoshProd, qui possède des chaines de fabrication en chine. 
+                        C’est donc en chine que le jeu a été fabriqué à environ 1000 exemplaires mais aussi testé comme vous pouvez le voir sur ce slide en haut à droite.
+                        Il va de soit que l’on a pas le droit à l’erreur avec ce genre de console, car le jeu (que l’on nomme ROM dans ce cas) est inscrit dans la cartouche et ne peut donc pas être mis à jour si des bugs sont trouvés, les jeux de maintenant n’ont pas ce problème grâce à Internet la la connectivité des consoles.
+                        On a eu hélas trouvé un bug après la fabrication, mais bon, cela fait du jeu un collector ;)
+                    </aside>
+                </section>
+                
+                <section data-background="assets/images/background-1.jpg" data-transition="slide">
+                    <h3>Financement du jeu Homebrew</h3>
+                    <p>Edition physique (manuel, boites, cartouches)</p>
+                    <p class="fragment" style="color: greenyellow;">Participatif ou  par des précommandes</p>
+                    <p><img class="r-frame large-image" src="assets/images/kickstarter.png"></p>
+                    <aside class="notes">
+                        1) Participatif, via des sites comme KickStarter, indiegogo.
+                        2) Par des précommandes, sur des forums, où la console est bien représentée.
+                        Afin de pouvoir produire le jeu en édition physique (c’est à dire avec boitier, manuel, cartouche), nous devons passer par un financement participatif car tout cela a un coup que ne pouvait pas supporter àl ‘époque la société CollectorVision.  Le financement avait été estimé à 10 000$ pour essayer de produire un certain nombre de cartouches. Il a été plus que dépassé pour atteindre près de 40 000$.
+                        Le seul soucis pour moi, par rapport à ce financement participatif, c’est que l’on met des paliers d’achévement pour le financement afin d’inciter les gens à participer. 
+                        A chaque palier atteint, on ajoute des récompenses. On ne pense bien entendu pas que tous les paliers seront atteints, mais pour notre jeu, cela a été le cas !
+                        C’est pour cela que je me suis retrouvé à devoir ajouter 2 cavernes supplémentaires au jeu avec des monstres différents à devoir gérer. Pour quelqu’un qui a en plus un travail chez Worldline, les soirées et les Week End allaient être bien occupés par ce projet…
+                    </aside>
+                </section>
+
+                <section data-background="assets/images/background-1.jpg" data-transition="slide">
+                    <h3>2017</h3>
+                    <p>La livraison a débuté et la fin d'une belle aventure</p>
+                    <p><img class="large-image" src="assets/images/livraison.png"></p>
+                    <aside class="notes">
+                        La livraison a été faite au Canada, avec les différentes versions prévues lors du KickStarter, dont la version “imitation OR” de la cartouche, comme vous pouvez le voir au milieu de la photo de gauche. Mais aussi une version avec coque bleue, comme présenté sur la photo de droite.
+                    </aside>
+                </section>
+
+                <!-- Seconde partie PVSNESLIB-->
+                <section data-background="assets/images/background-1.jpg" data-transition="slide">
+                    <h3>Réalisez votre rêve</h3>
+                    <p>Développez un jeu sur Super Nintendo avec PVSneslib !</p>
+                    <p><img class="large-image" src="assets/images/mario_snes.gif"></p>
+                    <aside class="notes">
+                        Nous allons regarder comment réaliser l'équivalent de ce peit jeu sur SNES avec le Kit que j'ai développé, PVSneslib
+                    </aside>
+                </section>
+
+                <section data-background="assets/images/background-1.jpg" data-transition="slide">
+                    <h3>Un peu de Hard...ware...</h3>
+                    <p><img class="large-image" src="assets/images/pvsneslib-40.png"></p>
+                    <aside class="notes">
+                        Différents types de mémoire
+                        Sortie son, la cartouche, la mémoire vidéo et la mémoire sonore
+                    </aside>
+                </section>
+
+                <section data-background="assets/images/background-1.jpg" data-transition="slide">
+                    <h3>Un peu de graphismes</h3>
+                    <p><img class="large-image" src="assets/images/pvsneslib-41.png"></p>
+                    <aside class="notes">
+                        Différentes couches de fond
+                        Les objets nommés sprites
+                        Les couleurs par des palttes de 16 couleurs
+                    </aside>
+                </section>
+
+                <section data-background="assets/images/background-1.jpg" data-transition="slide">
+                    <h3>PVSneslib : créé pour les 20 ans de la SNES</h3>
+                    <p>Plus de 10 ans de mises à jour</p>
+                    <p><img class="large-image" src="assets/images/pvsneslib-1.png"></p>
+                    <p style="color: greenyellow;">https://github.com/alekmaul/pvsneslib</p>
+                    <aside class="notes">
+                        Au fil du temps, ce kit a bien évolué . J’ai amélioré sa structure, ajouter beaucoup de fonctionnalités pour permettre une utilisation plus facile du kit, de certaines manettes aussi comme le multitap permettant de jouer à plus de 2 personnes sur Super Nintendo. J’ai aussi ajouté des exemples.
+                        Pas mal de développeurs dans le monde utilisent maintenant ce kit de développement, ce qui me rend un peu fier de voir que mon rêve de commercialiser un jeu sur SNES est aussi le rêve d’autre personnes.
+                        Du simple fichier ZIP du site UltimateConsole, le kit a maintenant son propre github avec une CI/CD pour la création des snapshots et de la doc.
+                        Confinement, création du discord
+                    </aside>
+                </section>
+
+                <section data-background="assets/images/background-1.jpg" data-transition="slide">
+                    <h3>Le SDK PVSnesLib</h3>
+                    <p>Pour les 20 ans de la SNES en Europe</p>
+                    <p><img class="large-image" src="assets/images/20ans_creation.png" alt="uc20ans"></p>
+                    <aside class="notes">
+                            Pour les 20 ans, en 2012
+                            Contact ami.
+                            
+                            Histo SNES : Novembre 1990 au Japon sous Super Famicom. 
+                            Super Nintendo ou SNES aux USAen 1991 et enfin en EUR  avec le même nom qu’au USA en 1992.
+                            Plus de 49 millions d’unités ont été vendues dans le monde, 
+                            Licenses connues
+                            
+                            Mise en place d’un kit de développement sur SNES, permettant aux personnes intéressées de pouvoir développer sur cette console. Ce kit permet de simplifier la programmation sur cette console,
+                            site Ultimate Console  le 12 Avril 2012.
+                            Basé sur les travaux d'Ulrich Hecht qui avait débuté un autre kit nommé SnesSDK. 
+                            PVSnesLib est en assembleur avec des primitives pour le langage C
+                    </aside>
+                </section>
+
+                <section data-background="assets/images/background-1.jpg" data-transition="slide">
+                    <h3>But du SDK PVSneslib</h3>
+                    <p style="color: aquamarine;">Fonctions génériques et simples pour gérer</p>
+                    <ul>
+                        <li style="color: cadetblue;">Les graphiques (fonds & objets animés)</li>
+                        <li style="color: cadetblue;">Le son</li>
+                        <li style="color: cadetblue;">La manette</li>
+                    </ul>
+                    <p style="color: aquamarine;">Langage C utilisé pour développer les jeux</p>
+                    <p style="color: aquamarine;">Des outils pour convertir les graphiques et les sons</p>
+                    <p style="color: greenyellow;">Ouvert à tout le monde sur github</p>
+                    <aside class="notes">
+                        Il est basé sur les travaux de Ulrich Hecht avec SNES Sdk
+                        Il fournis des fonctions génériques pour l’affichage et la gestion des différents BGs et des sprites, du son et des manettes de la SNES,
+                        Il permet d’utilizer le langage C pour developer ses jeux
+                        Et enfin, tout le monde peut contribuer à son évolution car il est disponible sous GitHub.
+                        Le kit est entièrement développé en assembleur avec des wrapper pour permettre son utilisation en C.
+                    </aside>
+                </section>
+
+                <section data-background="assets/images/background-1.jpg" data-transition="slide">
+                    <h3>Fonctionnement</h3>
+                    <section data-transition="slide">
+                    <p>Création de la cartouche (fichier SFC) pour la SNES</p>
+                    <p><img class="large-image" src="assets/images/pvsneslib-2.png"></p>
+                    <aside class="notes">
+                        <p>Rentrons plus dans le détail de foncitonnement du kit,
+                            Tout d’abord, on a les fichiers sources de notre jeu, qui peuvent être en C ou assembleur. On a aussi les fichiers ressources que j’expliquerais ensuite.
+                            Les fichiers sont compilés avec une version patchée de tcc (Tiny C Complier, un compilateur libre de droits), nommé 816-tcc.  J’ai aussi réalisé des outils pour modifier les variables de type constantes ou optimisé le code généré par 816-tcc car ce dernier ne génère pas un code très propre. 
+                            Les différents assets de notre jeu (son, sprites, écrans fixes ou map du jeu) sont convertis dans un format lisible par la SNES avec des outils que j’ai développé comme gfx2snes pour les graphiques ou smconv pour le son.
+                            Tout cela produit des fichiers objets qui sont ensuite liés les uns aux autres au bon endroit par l’outil wla-link. Ce dernier va produire le fichier rom, avec l’extension sfc qui sera utilizable sur carte flash ou sur émulateur..
+                            </p>
+                    </aside>
+                    </section>
+                    <section data-transition="slide">
+                        <p>Pseudo-code du jeu</p>
+                        <p align="left" style="color: aquamarine;">Initialisation de la console</p>
+                        <ul>
+                            <li style="color: cadetblue;">Du module sonore</li>
+                            <li style="color: cadetblue;">Du module graphique</li>
+                            <li style="color: cadetblue;">Mise en place des graphiques (backgrounds et sprites)</li>
+                        </ul>
+                        <p align="left" style="color: aquamarine;">Boucle principale</p>
+                        <ul>
+                            <li style="color: cadetblue;">Gestion des touches</li>
+                            <li style="color: cadetblue;">Déplacement du personnage et de la carte du niveau</li>
+                            <li style="color: cadetblue;">Attente de la fin d’affichage de l’écran (VBL)</li>
+                        </ul>
+                        <aside class="notes">
+                           <p>Voici le pseudo code general du jeu mario développé avec mon kit PVSneslib. Le code source est disponible sur le github de la lib, avec beaucoup d’autres exemples, permettant ainsi à ceux qui veulent essayer le kit , d’avoir de quoi progresser rapidement.</p>
+                        </aside>
+                    </section>
+                    <section data-transition="slide">
+                        <p>Définition de la cartouche (ROM) : hdr.asm</p>
+                        <pre data-id="code-animation"><code class="hljs custom-code" data-trim data-noescape data-line-numbers>
+.MEMORYMAP                    ; Begin describing the system architecture.
+SLOTSIZE $8000                ; The slot is $8000 bytes in size.
+..//..
+.ENDME          ; End MemoryMap definition
+
+.ROMBANKSIZE $8000            ; Every ROM bank is 32 KBytes in size
+.ROMBANKS 8                   ; 2 Mbits - Tell WLA we want to use 8 ROM Banks
+
+.SNESHEADER
+ID "SNES"                     ; 1-4 letter string, just leave it as "SNES"
+NAME "LIBSNES MARIO EXAMPLE"  ; Program Title - can't be over 21 bytes,
+
+SLOWROM
+LOROM
+
+CARTRIDGETYPE $00             ; $00 = ROM only $02 = ROM+SRAM
+ROMSIZE $08                   ; $08 = 2 Mbits
+SRAMSIZE $00                  ; $00 = No Sram, $01 = 16 kbits
+COUNTRY $01                   ; $01 = U.S.  $00 = Japan
+LICENSEECODE $00              ; Just use $00
+VERSION $00                   ; $00 = 1.00, $01 = 1.01, etc.
+.ENDSNES
+
+.SNESNATIVEVECTOR             ; Define Native Mode interrupt vector table
+..//..
+.ENDNATIVEVECTOR
+
+.SNESEMUVECTOR                ; Define Emulation Mode interrupt vector table
+..//..
+.ENDEMUVECTOR
+                            </code></pre>
+                        <aside class="notes">
+                            Rentrons maintenant dans le détail des fichiers de ressources.
+                                Un premier fichier, nommé hdr.asm, présenté sur la droite de votre écran, permet de définir les caractèristiques de la cartouche, comme par exemple, la taille du jeu, s’il utilise de la mémoire RAM nom volatile nommé SRAM, si c’est une cartouche PAL ou NTSC.
+                        </aside>
+                    </section>
+                    <section data-transition="slide">
+                        <p>Les ressources (graphiques, sons) : data.asm</p>
+                        <pre data-id="code-animation"><code class="hljs custom-code" data-trim data-noescape data-line-numbers>
+.include "hdr.asm"
+
+.section ".rodata1" superfree
+tileset:
+.incbin "tiles.pic"
+tilesetend:
+tilepal:
+.incbin "tiles.pal"
+mariogfx: .incbin "mario_sprite.pic"
+mariogfx_end:
+mariopal: .incbin "mario_sprite.pal"
+snesfont: .incbin "mariofont.pic"
+snesfont_end:
+snespal: .incbin "mariofont.pal"
+jumpsnd: .incbin "mariojump.brr"
+jumpsndend:
+.ends
+
+.section ".rodata2" superfree
+mapmario:
+.incbin "BG1.m16"
+objmario:
+.incbin "map_1_1.o16"
+tilesetatt:
+.incbin "map_1_1.b16"
+tilesetdef:
+.incbin "map_1_1.t16"
+.ends
+                        </code></pre>
+                        <aside class="notes">
+                                Ce fichier permet d’ajouter les différents fichiers de ressources, par paquet de 32Ko, nommée section, comme vous pouvez le voir avec les section rodata sur l’écran,
+                                Dés fois, la compilation ne passe pas car on dépasse les 32Ko, il faut donc créer de Nouvelles sections pour remttre certains fichiers dedans. 
+                                On peut estimer la taille des sections en regardant la taille des fichiers sous Windows.
+                                </p>
+                        </aside>
+                    </section>
+                    <section>
+                        <p>Les graphiques - Initialisation</p>
+                        <pre data-id="code-animation"><code class="hljs custom-code" data-trim data-noescape data-line-numbers>
+// Init layer with tiles and init also map length 0x6800 is mandatory for map engine
+bgSetGfxPtr(1, 0x3000);
+bgSetMapPtr(1, 0x6000, SC_32x32);
+bgInitTileSet(0, &tileset, &tilepal, 0, (&tilesetend - &tileset), 16 * 2, BG_16COLORS, 0x2000);
+bgSetMapPtr(0, 0x6800, SC_64x32);
+
+// do some stuffs (see next slides)...
+
+// Now Put in 16 color mode and disable BG3
+setMode(BG_MODE1, 0);
+bgSetDisable(2);
+                        </code></pre>
+                        <aside class="notes">
+                            Il faut définir l'endroit dans la mémoire graphique où on va placer les écrans, etc ..
+                                On commence par utilizer la function bgInitTileSet qui réalise plusieurs operations en même temps. ‘affectation en mémoire du niveau, de ces tiles et de sa palette,
+                                On définie ensuite l’endroit ou la tilemap se trouvera dans la mêmoire de la rom (0x1000) ainsi que la taille réservée pour son affichage (ici 64 tiles en X et 32 tiles en Y). Ce qui nous pemettra de faire l’effet scrolling du niveau.
+                                Le reste du code, avec le dmaCopyVram permet de remplir la tilemap dans la mémoire écran (nommé Vidéo Ram) avec les bons tiles et de l’afficher sur l’écran.
+                        </aside>
+                    </section>
+                    <section>
+                        <p>Les graphiques - Création de la carte de jeu</p>
+                        <p><img class="h640" src="assets/images/pvsneslib-42.png"></p>
+                        <aside class="notes">
+                            On utilise l'outil Tiled pour créer les niveaux, avec un export au format JSON.
+                        </aside>
+                    </section>
+                    <section>
+                        <p>Les graphiques - Chargement de la carte de jeu</p>
+                        <pre data-id="code-animation"><code class="cpp hljs custom-code" data-trim data-noescape data-line-numbers>
+// Init layer with tiles and init also map length 0x6800 is mandatory for map engine
+...
+
+// Load map in memory and update it regarding current location of the sprite
+mapLoad((u8 *)&mapmario, (u8 *)&tilesetdef, (u8 *)&tilesetatt);
+
+...
+                        </code></pre>
+                        <aside class="notes">
+                            Pour l’affichage du niveau de mario, une fonction suffit à charger le niveau si les graphismes ont été intialisé.
+                        </aside>
+                    </section>
+                    <section>
+                        <p>Les graphiques - les sprites et le moteur d'objets</p>
+                        <pre data-id="code-animation"><code class="hljs custom-code" data-trim data-noescape data-line-numbers>
+// Init layer with tiles and init also map length 0x6800 is mandatory for map engine
+...
+
+// Init sprite engine (0x0000 for large, 0x1000 for small)
+oamInitDynamicSprite(0x0000, 0x1000, 0, 0, OBJ_SIZE8_L16);
+                            
+// do some stuffs (see next slide)...
+                            
+// Object engine activate
+objInitEngine();
+
+// Init function for state machine
+objInitFunctions(0, &marioinit, &marioupdate, NULL);
+
+// Load all objects into memory
+objLoadObjects((char *)&objmario);
+
+
+
+//---------------------------------------------------------------------------------
+// Init function for mario object
+void marioinit(u16 xp, u16 yp, u16 type, u16 minx, u16 maxx)
+{
+    ...
+
+    // Init some vars for snes sprite (objgetid is the current object id)
+    objGetPointer(objgetid);
+    marioobj = &objbuffers[objptr - 1];
+    marioobj->width = 16;
+    marioobj->height = 16;
+
+    ....
+
+    // prepare dynamic sprite object
+...
+    oambuffer[0].oamgraphics = &mariogfx;
+
+    // Init Sprites palette
+    setPalette(&mariopal, 128 + 0 * 16, 16 * 2);
+}
+
+
+                        </code></pre>
+                        <p><img class="large-image" src="assets/images/pvsneslib-50.png"></p>
+                        <aside class="notes">
+                            Ce code, pour ces 2 premières fonctions, permet d’affecter la font présentée en bas de ce slide, qui sera utilisée pour le score et de définir sa couleur.
+                            En bas, on définie les caractèrisque du sprite mario par les fonction oamSet et oamSetEx,
+                            <parler des caractéristiques des sprites et du fait que l’on ne peut pas avoir plus de 2 tailles possibles>
+                            On ne réalise qu’une seule orientation de Mario car la SNES gère le « flipping horizontal et vertical », pour retourner le sprite par la hauteur ou par la largeur,
+                        </aside>
+                    </section>
+                    <section>
+                        <p>Le son - Modplug Tracker</p>
+                        <p><img class="large-image" src="assets/images/pvsneslib-60.png"></p>
+                        <aside class="notes">
+                            Concernant le son, on définie la musique avec un outil de type tracker, comme ModPlug Tracker :  https://www.modplug.com/#/
+                                <expliquer le format tracker>
+                        </aside>
+                    </section>
+                    <section>
+                        <p>Le son</p>
+                        <pre data-id="code-animation"><code class="cpp hljs custom-code" data-trim data-noescape data-line-numbers>
+// Initialize sound engine (take some time)
+spcBoot();
+
+...
+
+// Set give soundbank
+spcSetBank(&SOUNDBANK__);
+
+// allocate around 10K of sound ram (39 256-byte blocks)
+spcAllocateSoundRegion(39);
+
+// Load music
+spcLoad(MOD_OVERWORLD);
+
+...
+
+// Load sample
+spcSetSoundEntry(15, 8, 6, &jumpsndend - &jumpsnd, &jumpsnd, &Jump);
+
+...
+
+// Play music from the beginning
+spcPlay(0);
+
+...
+
+// Play effect
+spcPlaySound(0);
+                        </code></pre>
+                        <aside class="notes">
+                            Pour le code, il faut d’abord initializer le processeur sonor en lui envoyant du code qui lui permet de comprendre le format tracker IT, par la function spcBoot.
+                            Il va donc stocker dans sa mémoire du code qu’il exécutera pour supporter ce format.
+                            On garde de la mémoire RAM dans ce processeur pour jouer les sons comme par exemple celui de mario quand il saute.
+                            Les deux dernière instructions permettent de charger en mémoire la musique et le son du saut
+                    </aside>
+                    </section>
+
+                </section>
+
+                <section data-background="assets/images/background-1.jpg" data-transition="slide">
+                    <h3>UNE DEMO!</h3>
+                    <aside class="notes">
+                        <p> </p>
+                    </aside>
+                </section>
+                
+                <section data-background="assets/images/background-1.jpg" data-transition="slide">
+                    <h3>La toile et ses excés</h3>
+                    <p class="medium-text">Quand certains essayent d’en profiter …</p>
+                    <p><img class="h512 rounded-16" src="assets/images/exces-1.png" alt="Ebay"></p>
+                    <aside class="notes">
+                        <p>Bien entendu, le jeu s’est retrouvé, comme beaucoup d’autres jeux, en vente sur eBay, à un prix bien supérieur au prix d’achat. Même si cette version “Gold cart” était effectivement une version rare du jeu, à 150$, de là à essayer de le vendre 300$ ...</p>
+                    </aside>
+                </section>
+                <section data-background="assets/images/background-1.jpg" data-transition="slide">
+                    <h3>La boucle est bouclée</h3>
+                    <section>
+                    <p class="medium-text">Le plaisir de se faire pirater !</p>
+                    <p><img class="h512 rounded-16" src="assets/images/exces-2.png" alt="Ebay"></p>
+                    <aside class="notes">
+                        <p>Afin d’avoir mon rève réalisé jusqu’au bout, et bien, j’ai eu le droit à voir mon jeu piraté et en vente sur Ali Express (il y est encore de nos jours).
+                            Ni une, ni deux, j’ai donc acheté cette version pirate, elle n’a bien entendu rien à voir par rapport à l’original (elle ne possède pas de boite, ni de manuel et la cartouche est de piètre qualité) mais la boucle est bouclée, on ne peut pas espérer mieux pour un développeur amateur.
+                            </p>
+                    </aside>
+                    </section>
+                    <section>
+                        <p class="medium-text">Mais aussi de se faire spammer !</p>
+                        <p><img class="h512 rounded-16" src="assets/images/exces-3.png" alt="Ebay"></p>
+                        <aside class="notes">
+                            <p> AliExpress m’a même envoyé un mail lors du Black Friday pour que j’achète mon jeu en version piraté !
+                                On ne peut hélas arréter difficilement ce genre de vente sur ces sites chinois, mais ça m’a bien fait rire de recevoir ce mail.
+                                </p>
+                        </aside>
+                    </section>
+                </section>
+
+                <section data-background="assets/images/background-1.jpg"  data-transition="zoom">
+                    <h2>MERCI</h2>
+                    <p>Des questions ?</p>
+                    <p><img class="h512 rounded-24" src="assets/images/questions.png" alt="L'équipage d'Apollo 12 lors de sa conférence de presse post-mission"></p>
+                    <aside class="notes">
+                        <p>Pas de notes ...</p>
+                    </aside>
+                </section>
+                
+            </div>
+        </div>
+        <script src="vendor/reveal/dist/reveal.js"></script>
+        <script src="vendor/reveal/plugin/zoom/zoom.js"></script>
+        <script src="vendor/reveal/plugin/notes/notes.js"></script>
+        <script src="vendor/reveal/plugin/search/search.js"></script>
+        <script src="vendor/reveal/plugin/markdown/markdown.js"></script>
+        <script src="vendor/reveal/plugin/highlight/highlight.js"></script>
+        <script src="vendor/reveal/plugin/math/math.js"></script>
+        <script src="vendor/custom/js/custom.js"></script>
+        <script>
+            Reveal.initialize({
+                width: 1280,
+                height: 1024,
+                controls: true,
+                progress: true,
+                center: true,
+                hash: true,
+                slideNumber: 'c/t',
+                navigationMode: 'linear',
+                plugins: [ RevealZoom, RevealNotes, RevealSearch, RevealMarkdown, RevealHighlight, RevealMath.MathJax3 ]
+            });
+        </script>
+    </body>
+</html>
