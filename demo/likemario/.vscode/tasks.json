@@ -1,0 +1,54 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "PVSneslib - Build",
+      "type": "shell",
+      "command": "make",
+      "args": ["all"],
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "PVSneslib - Clean",
+      "type": "shell",
+      "command": "make",
+      "args": ["clean"],
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "PVSneslib - Emul",
+      "type": "shell",
+      "command": "../../emul/Mesen.exe",
+      "args": ["./likemario.sfc"],
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+	{
+		"label": "PVSneslib - Tiled",
+		"type": "shell",
+		"command": "../../tiled/tiled.exe",
+		"group": "build",
+		"presentation": {
+		  "reveal": "always",
+		  "panel": "new"
+		},
+		"problemMatcher": []
+	  },
+	]
+}
