@@ -3,23 +3,23 @@
 .section ".rodata1" superfree
 
 tileset:
-.incbin "tiles.pic"
+.incbin "gfxs/tiles.pic"
 tilesetend:
 
 tilepal:
-.incbin "tiles.pal"
+.incbin "gfxs/tiles.pal"
 
-mariogfx: .incbin "mario_sprite.pic"
+mariogfx: .incbin "gfxs/mario_sprite.pic"
 mariogfx_end:
 
-mariopal: .incbin "mario_sprite.pal"
+mariopal: .incbin "gfxs/mario_sprite.pal"
 
-snesfont: .incbin "mariofont.pic"
+snesfont: .incbin "gfxs/mariofont.pic"
 snesfont_end:
 
-snespal: .incbin "mariofont.pal"
+snespal: .incbin "gfxs/mariofont.pal"
 
-jumpsnd: .incbin "mariojump.brr"
+jumpsnd: .incbin "snds/mariojump.brr"
 jumpsndend:
 
 .ends
@@ -27,15 +27,15 @@ jumpsndend:
 .section ".rodata2" superfree
 
 mapmario:
-.incbin "BG1.m16"
+.incbin "gfxs/BG1.m16"
 
 objmario:
-.incbin "map_1_1.o16"
+.incbin "gfxs/map_1_1.o16"
 
 tilesetatt:
-.incbin "map_1_1.b16"
+.incbin "gfxs/map_1_1.b16"
 
 tilesetdef:
-.incbin "map_1_1.t16"
+.incbin "gfxs/map_1_1.t16"
 
 .ends

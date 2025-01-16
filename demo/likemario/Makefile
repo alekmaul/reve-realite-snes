@@ -6,7 +6,7 @@ endif
 
 # BEFORE including snes_rules :
 # list in AUDIOFILES all your .it files in the right order. It will build to generate soundbank file
-AUDIOFILES := overworld.it
+AUDIOFILES := snds/overworld.it
 # then define the path to generate soundbank data. The name can be different but do not forget to update your include in .c file !
 export SOUNDBANK := soundbank
 
@@ -22,26 +22,26 @@ export ROMNAME := likemario
 SMCONVFLAGS	:= -s -o $(SOUNDBANK) -V -b 5
 musics: $(SOUNDBANK).obj
 
-all: musics mariojump.brr bitmaps $(ROMNAME).sfc
+all: musics snds/mariojump.brr bitmaps $(ROMNAME).sfc
 
 clean: cleanBuildRes cleanRom cleanGfx cleanAudio
-	@rm -f *.clm mariojump.brr
-		
+	@rm -f *.clm gfxs/*.b16 gfxs/*.o16  gfxs/*.t16 gfxs/*.pal gfxs/*.pic gfxs/*.map snds/mariojump.brr
+
 #---------------------------------------------------------------------------------
-mario_sprite.pic: mario_sprite.bmp
+gfxs/mario_sprite.pic: gfxs/mario_sprite.bmp
 	@echo convert sprites ... $(notdir $@)
 	$(GFXCONV) -s 16 -o 16 -u 16 -p -t bmp -i $<
 
-tiles.pic: tiles.png
+gfxs/tiles.pic: gfxs/tiles.png
 	@echo convert map tileset... $(notdir $@)
 	$(GFXCONV) -s 8 -o 16 -u 16 -p -m -i $<
 
-map_1_1.m16: map_1_1.tmj tiles.pic
+gfxs/map_1_1.m16: gfxs/map_1_1.tmj gfxs/tiles.pic
 	@echo convert map tiled ... $(notdir $@)
-	$(TMXCONV) $< tiles.map
+	$(TMXCONV) $< gfxs/tiles.map
 
-mariofont.pic: mariofont.bmp
+gfxs/mariofont.pic: gfxs/mariofont.bmp
 	@echo convert font with no tile reduction ... $(notdir $@)
 	$(GFXCONV) -s 8 -o 2 -u 16 -e 1 -p -t bmp -m -R -i $<
-	
-bitmaps : tiles.pic mariofont.pic map_1_1.m16 mario_sprite.pic
+
+bitmaps : gfxs/tiles.pic gfxs/mariofont.pic gfxs/map_1_1.m16 gfxs/mario_sprite.pic
