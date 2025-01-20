@@ -304,6 +304,7 @@
                 </section>
                 
                 <section data-background="assets/images/background-1.jpg" data-transition="slide">
+                    <h3>KickStater, IndieGogo</h3>
                     <p><img class="r-frame large-image" src="assets/images/kickstarter.png"></p>
                     <aside class="notes">
                         **Financement du jeu Homebrew
@@ -438,7 +439,7 @@
                     </aside>
                     </section>
                     <section>
-                        <p>Les graphiques - Création de la carte de jeu</p>
+                        <p>Les graphiques - Tiled</p>
                         <p><img class="h640" src="assets/images/pvsneslib-42.png"></p>
                         <aside class="notes">
                             On utilise l'outil Tiled pour créer les niveaux, avec un export au format JSON.
@@ -485,7 +486,7 @@
                 
                 <section data-background="assets/images/background-1.jpg" data-transition="slide">
                     <h3>La toile et ses excés</h3>
-                    <p><img class="h512 rounded-16" src="assets/images/exces-1.png" alt="Ebay"></p>
+                    <p><img class="rounded-16" src="assets/images/exces-1.png" alt="Ebay"></p>
                     <aside class="notes">
                         **Quand certains essayent d’en profiter …
                         Bien entendu, le jeu s’est retrouvé, comme beaucoup d’autres jeux, en vente sur eBay, à un prix bien supérieur au prix d’achat. Même si cette version “Gold cart” était effectivement une version rare du jeu, à 150$, de là à essayer de le vendre 300$ ...
@@ -494,7 +495,7 @@
                 <section data-background="assets/images/background-1.jpg" data-transition="slide">
                     <h3>La boucle est bouclée</h3>
                     <section>
-                    <p><img class="h512 rounded-16" src="assets/images/exces-2.png" alt="Ebay"></p>
+                    <p><img class="rounded-16" src="assets/images/exces-2.png" alt="ALiexp"></p>
                     <aside class="notes">
                         **Le plaisir de se faire pirater !
                         Afin d’avoir mon rève réalisé jusqu’au bout, et bien, j’ai eu le droit à voir mon jeu piraté et en vente sur Ali Express (il y est encore de nos jours).
@@ -502,7 +503,7 @@
                     </aside>
                     </section>
                     <section>
-                        <p><img class="h512 rounded-16" src="assets/images/exces-3.png" alt="Ebay"></p>
+                        <p><img class="rounded-16" src="assets/images/exces-3.png" alt="ALiexp"></p>
                         <aside class="notes">
                             **Mais aussi de se faire spammer !
                             AliExpress m’a même envoyé un mail lors du Black Friday pour que j’achète mon jeu en version piraté !
@@ -513,223 +514,12 @@
 
                 <section data-background="assets/images/background-1.jpg"  data-transition="zoom">
                     <h2>MERCI !</h2>
-                    <p>Des questions ?</p>
-                    <p><img class="h512 rounded-24" src="assets/images/questions.png" alt="L'équipage d'Apollo 12 lors de sa conférence de presse post-mission"></p>
-                    <aside class="notes">
+                    <table><tr><td><img class="h512 rounded-24" src="assets/images/questions.png" alt="box mario"></td><td><img class="h512 rounded-24" src="assets/images/openfeedback.png" alt="box mario"></td></tr></table>
+                    <p>alekmaul@portabledev.com</p>
+                <aside class="notes">
                         <p>Pas de notes ...</p>
                     </aside>
                 </section>
-<!--
-                <section data-transition="slide">
-                    <p>Définition de la cartouche (ROM) : hdr.asm</p>
-                    <pre data-id="code-animation"><code class="hljs custom-code" data-trim data-noescape data-line-numbers>
-.MEMORYMAP                    ; Begin describing the system architecture.
-SLOTSIZE $8000                ; The slot is $8000 bytes in size.
-..//..
-.ENDME          ; End MemoryMap definition
-
-.ROMBANKSIZE $8000            ; Every ROM bank is 32 KBytes in size
-.ROMBANKS 8                   ; 2 Mbits - Tell WLA we want to use 8 ROM Banks
-
-.SNESHEADER
-ID "SNES"                     ; 1-4 letter string, just leave it as "SNES"
-NAME "LIBSNES MARIO EXAMPLE"  ; Program Title - can't be over 21 bytes,
-
-SLOWROM
-LOROM
-
-CARTRIDGETYPE $00             ; $00 = ROM only $02 = ROM+SRAM
-ROMSIZE $08                   ; $08 = 2 Mbits
-SRAMSIZE $00                  ; $00 = No Sram, $01 = 16 kbits
-COUNTRY $01                   ; $01 = U.S.  $00 = Japan
-LICENSEECODE $00              ; Just use $00
-VERSION $00                   ; $00 = 1.00, $01 = 1.01, etc.
-.ENDSNES
-
-.SNESNATIVEVECTOR             ; Define Native Mode interrupt vector table
-..//..
-.ENDNATIVEVECTOR
-
-.SNESEMUVECTOR                ; Define Emulation Mode interrupt vector table
-..//..
-.ENDEMUVECTOR
-                        </code></pre>
-                    <aside class="notes">
-                        Rentrons maintenant dans le détail des fichiers de ressources.
-                            Un premier fichier, nommé hdr.asm, présenté sur la droite de votre écran, permet de définir les caractèristiques de la cartouche, comme par exemple, la taille du jeu, s’il utilise de la mémoire RAM nom volatile nommé SRAM, si c’est une cartouche PAL ou NTSC.
-                    </aside>
-                </section>
-                <section data-transition="slide">
-                    <p>Les ressources (graphiques, sons) : data.asm</p>
-                    <pre data-id="code-animation"><code class="hljs custom-code" data-trim data-noescape data-line-numbers>
-.include "hdr.asm"
-
-.section ".rodata1" superfree
-tileset:
-.incbin "tiles.pic"
-tilesetend:
-tilepal:
-.incbin "tiles.pal"
-mariogfx: .incbin "mario_sprite.pic"
-mariogfx_end:
-mariopal: .incbin "mario_sprite.pal"
-snesfont: .incbin "mariofont.pic"
-snesfont_end:
-snespal: .incbin "mariofont.pal"
-jumpsnd: .incbin "mariojump.brr"
-jumpsndend:
-.ends
-
-.section ".rodata2" superfree
-mapmario:
-.incbin "BG1.m16"
-objmario:
-.incbin "map_1_1.o16"
-tilesetatt:
-.incbin "map_1_1.b16"
-tilesetdef:
-.incbin "map_1_1.t16"
-.ends
-                    </code></pre>
-                    <aside class="notes">
-                            Ce fichier permet d’ajouter les différents fichiers de ressources, par paquet de 32Ko, nommée section, comme vous pouvez le voir avec les section rodata sur l’écran,
-                            Dés fois, la compilation ne passe pas car on dépasse les 32Ko, il faut donc créer de Nouvelles sections pour remttre certains fichiers dedans. 
-                            On peut estimer la taille des sections en regardant la taille des fichiers sous Windows.
-                            </p>
-                    </aside>
-                </section>
-                <section>
-                    <p>Les graphiques - Initialisation</p>
-                    <pre data-id="code-animation"><code class="hljs custom-code" data-trim data-noescape data-line-numbers>
-// Init layer with tiles and init also map length 0x6800 is mandatory for map engine
-bgSetGfxPtr(1, 0x3000);
-bgSetMapPtr(1, 0x6000, SC_32x32);
-bgInitTileSet(0, &tileset, &tilepal, 0, (&tilesetend - &tileset), 16 * 2, BG_16COLORS, 0x2000);
-bgSetMapPtr(0, 0x6800, SC_64x32);
-
-// do some stuffs (see next slides)...
-
-// Now Put in 16 color mode and disable BG3
-setMode(BG_MODE1, 0);
-bgSetDisable(2);
-                    </code></pre>
-                    <aside class="notes">
-                        Il faut définir l'endroit dans la mémoire graphique où on va placer les écrans, etc ..
-                            On commence par utilizer la function bgInitTileSet qui réalise plusieurs operations en même temps. ‘affectation en mémoire du niveau, de ces tiles et de sa palette,
-                            On définie ensuite l’endroit ou la tilemap se trouvera dans la mêmoire de la rom (0x1000) ainsi que la taille réservée pour son affichage (ici 64 tiles en X et 32 tiles en Y). Ce qui nous pemettra de faire l’effet scrolling du niveau.
-                            Le reste du code, avec le dmaCopyVram permet de remplir la tilemap dans la mémoire écran (nommé Vidéo Ram) avec les bons tiles et de l’afficher sur l’écran.
-                    </aside>
-                </section>
-                <section>
-                    <p>Les graphiques - Chargement de la carte de jeu</p>
-                    <pre data-id="code-animation"><code class="cpp hljs custom-code" data-trim data-noescape data-line-numbers>
-// Init layer with tiles and init also map length 0x6800 is mandatory for map engine
-...
-
-// Load map in memory and update it regarding current location of the sprite
-mapLoad((u8 *)&mapmario, (u8 *)&tilesetdef, (u8 *)&tilesetatt);
-
-...
-                    </code></pre>
-                    <aside class="notes">
-                        Pour l’affichage du niveau de mario, une fonction suffit à charger le niveau si les graphismes ont été intialisé.
-                    </aside>
-                </section>
-                <section>
-                    <p>Les graphiques - les sprites et le moteur d'objets</p>
-                    <pre data-id="code-animation"><code class="hljs custom-code" data-trim data-noescape data-line-numbers>
-// Init layer with tiles and init also map length 0x6800 is mandatory for map engine
-...
-
-// Init sprite engine (0x0000 for large, 0x1000 for small)
-oamInitDynamicSprite(0x0000, 0x1000, 0, 0, OBJ_SIZE8_L16);
-                        
-// do some stuffs (see next slide)...
-                        
-// Object engine activate
-objInitEngine();
-
-// Init function for state machine
-objInitFunctions(0, &marioinit, &marioupdate, NULL);
-
-// Load all objects into memory
-objLoadObjects((char *)&objmario);
-
-
-
-//---------------------------------------------------------------------------------
-// Init function for mario object
-void marioinit(u16 xp, u16 yp, u16 type, u16 minx, u16 maxx)
-{
-...
-
-// Init some vars for snes sprite (objgetid is the current object id)
-objGetPointer(objgetid);
-marioobj = &objbuffers[objptr - 1];
-marioobj->width = 16;
-marioobj->height = 16;
-
-....
-
-// prepare dynamic sprite object
-...
-oambuffer[0].oamgraphics = &mariogfx;
-
-// Init Sprites palette
-setPalette(&mariopal, 128 + 0 * 16, 16 * 2);
-}
-
-
-                    </code></pre>
-                    <p><img class="large-image" src="assets/images/pvsneslib-50.png"></p>
-                    <aside class="notes">
-                        Ce code, pour ces 2 premières fonctions, permet d’affecter la font présentée en bas de ce slide, qui sera utilisée pour le score et de définir sa couleur.
-                        En bas, on définie les caractèrisque du sprite mario par les fonction oamSet et oamSetEx,
-                        <parler des caractéristiques des sprites et du fait que l’on ne peut pas avoir plus de 2 tailles possibles>
-                        On ne réalise qu’une seule orientation de Mario car la SNES gère le « flipping horizontal et vertical », pour retourner le sprite par la hauteur ou par la largeur,
-                    </aside>
-                </section>
-                <section>
-                    <p>Le son</p>
-                    <pre data-id="code-animation"><code class="cpp hljs custom-code" data-trim data-noescape data-line-numbers>
-// Initialize sound engine (take some time)
-spcBoot();
-
-...
-
-// Set give soundbank
-spcSetBank(&SOUNDBANK__);
-
-// allocate around 10K of sound ram (39 256-byte blocks)
-spcAllocateSoundRegion(39);
-
-// Load music
-spcLoad(MOD_OVERWORLD);
-
-...
-
-// Load sample
-spcSetSoundEntry(15, 8, 6, &jumpsndend - &jumpsnd, &jumpsnd, &Jump);
-
-...
-
-// Play music from the beginning
-spcPlay(0);
-
-...
-
-// Play effect
-spcPlaySound(0);
-                    </code></pre>
-                    <aside class="notes">
-                        Pour le code, il faut d’abord initializer le processeur sonor en lui envoyant du code qui lui permet de comprendre le format tracker IT, par la function spcBoot.
-                        Il va donc stocker dans sa mémoire du code qu’il exécutera pour supporter ce format.
-                        On garde de la mémoire RAM dans ce processeur pour jouer les sons comme par exemple celui de mario quand il saute.
-                        Les deux dernière instructions permettent de charger en mémoire la musique et le son du saut
-                </aside>
-                </section>
-            </section>
--->
             </div>
         </div>
         <script src="vendor/reveal/dist/reveal.js"></script>
