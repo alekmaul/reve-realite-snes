@@ -1,4 +1,5 @@
-export PVSNESLIB_HOME=../pvsneslib
+#export PVSNESLIB_HOME=/c/../pvsneslib
+export PVSNESLIB_HOME=/c/svgexterne/vboxshared/DropboxSvnClient/prezconventions/reve-realite-snes/demo/pvsneslib
 
 ifeq ($(strip $(PVSNESLIB_HOME)),)
 $(error "Please create an environment variable PVSNESLIB_HOME by following this guide: https://github.com/alekmaul/pvsneslib/wiki/Installation")

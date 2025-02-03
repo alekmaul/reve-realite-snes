@@ -120,6 +120,7 @@ int main(void)
     // Initialize text console with our font
     consoleSetTextVramBGAdr(0x6000);
     consoleSetTextVramAdr(0x3000);
+    consoleSetTextOffset(0x0000);
     consoleInitText(1, 16 * 2, &snesfont, &snespal);
 
     // Set give soundbank
@@ -157,11 +158,12 @@ int main(void)
 
     // Now Put in 16 color mode and disable BG3
     setMode(BG_MODE1, 0);
+    bgSetEnable(1);
     bgSetDisable(2);
 
     // Put some text
-    consoleDrawText(6, 16, "MARIOx00  WORLD TIME");
-    consoleDrawText(6, 17, " 00000 ox00 1-1  000");
+    consoleDrawText(6, 17, "MARIOx00  WORLD TIME");
+    consoleDrawText(6, 18, " 00000 ox00 1-1  000");
 
     // Put screen on
     setScreenOn();
